@@ -1,6 +1,5 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export interface ProjectProps {
   title: string;
@@ -24,17 +23,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
   paper,
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+    <div
       className="bg-accent-50 dark:bg-accent-900/30 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-accent-200 dark:border-accent-800"
     >
       <div className="relative h-48 overflow-hidden">
         <img 
           src={image} 
           alt={title} 
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
         <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-10 transition-opacity duration-300"></div>
@@ -100,7 +96,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
