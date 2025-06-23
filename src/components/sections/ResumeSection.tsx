@@ -16,7 +16,7 @@ const ResumeSection = () => {
     {
       company: 'NXP India',
       position: 'Technical Intern',
-      duration: 'Jan 2025 - Jun 2025',
+      duration: 'Jan 2025 - Present',
       location: 'Bangalore, India',
       type: 'Current',
       responsibilities: [
