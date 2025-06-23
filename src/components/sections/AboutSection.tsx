@@ -1,10 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { 
   MapPin, 
   Mail, 
   Phone, 
-  Calendar,
   Award,
   Target,
   Heart,
@@ -26,55 +24,39 @@ const AboutSection = () => {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center space-y-4"
-      >
+      <div className="text-center space-y-4">
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
           About Me
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
           A passionate Computer Science student who loves building AI tools and creating solutions that help people in meaningful ways.
         </p>
-      </motion.div>
+      </div>
 
-      {/* Stats - Fixed alignment */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="grid grid-cols-3 gap-6"
-      >
+      {/* Stats */}
+      <div className="grid grid-cols-3 gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <motion.div
+            <div
               key={stat.label}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="text-center p-6 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg"
+              className="text-center p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm"
             >
               <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Icon className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 text-center">{stat.label}</div>
-            </motion.div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Column */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="space-y-6"
-        >
-          <div className="p-8 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+        <div className="space-y-6">
+          <div className="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 flex items-center">
               <Heart className="w-6 h-6 text-red-500 mr-3" />
               My Story
@@ -93,7 +75,7 @@ const AboutSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="p-6 bg-gradient-to-br from-accent-50/80 to-accent-100/40 dark:from-accent-900/30 dark:to-accent-800/20 backdrop-blur-sm rounded-2xl border border-accent-200/50 dark:border-accent-700/50">
+          <div className="p-6 bg-accent-50 dark:bg-accent-900/30 rounded-2xl border border-accent-200 dark:border-accent-700">
             <h3 className="text-xl font-bold mb-4 text-accent-700 dark:text-accent-300">Get In Touch</h3>
             <div className="space-y-3">
               {[
@@ -123,36 +105,27 @@ const AboutSection = () => {
               })}
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right Column */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="space-y-6"
-        >
+        <div className="space-y-6">
           {/* Interests */}
-          <div className="p-8 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+          <div className="p-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
             <h3 className="text-2xl font-bold mb-6">Areas of Interest</h3>
             <div className="flex flex-wrap gap-3">
               {interests.map((interest, index) => (
-                <motion.span
+                <span
                   key={interest}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-gradient-to-r from-accent-500/10 to-accent-600/10 text-accent-700 dark:text-accent-300 rounded-full border border-accent-500/20 font-medium text-sm hover:from-accent-500/20 hover:to-accent-600/20 transition-all duration-300"
+                  className="px-4 py-2 bg-accent-500/10 text-accent-700 dark:text-accent-300 rounded-full border border-accent-500/20 font-medium text-sm"
                 >
                   {interest}
-                </motion.span>
+                </span>
               ))}
             </div>
           </div>
 
           {/* Philosophy */}
-          <div className="p-8 bg-gradient-to-br from-purple-50/80 to-pink-50/40 dark:from-purple-900/30 dark:to-pink-900/20 backdrop-blur-sm rounded-2xl border border-purple-200/50 dark:border-purple-700/50 shadow-lg">
+          <div className="p-8 bg-purple-50 dark:bg-purple-900/30 rounded-2xl border border-purple-200 dark:border-purple-700 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300">My Philosophy</h3>
             <blockquote className="text-lg italic text-gray-700 dark:text-gray-300 leading-relaxed">
               "Technology should be a force for good, making complex problems simple and impossible things possible. Every line of code I write moves us closer to a smarter, more connected future."
@@ -160,13 +133,13 @@ const AboutSection = () => {
           </div>
 
           {/* Fun Fact */}
-          <div className="p-6 bg-gradient-to-br from-yellow-50/80 to-orange-50/40 dark:from-yellow-900/30 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl border border-yellow-200/50 dark:border-yellow-700/50 shadow-lg">
+          <div className="p-6 bg-yellow-50 dark:bg-yellow-900/30 rounded-2xl border border-yellow-200 dark:border-yellow-700 shadow-sm">
             <h3 className="text-xl font-bold mb-3 text-yellow-700 dark:text-yellow-300">Fun Fact</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Built an AI that understands human language better than I do on Monday mornings. ☕🤖
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

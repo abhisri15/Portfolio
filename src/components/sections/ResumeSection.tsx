@@ -1,16 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { 
   Download, 
   Briefcase, 
   GraduationCap, 
   Award,
   Code,
-  Brain,
-  Database,
-  Cloud,
-  Globe,
-  Cpu,
   Calendar,
   MapPin,
   Building
@@ -91,50 +85,35 @@ const ResumeSection = () => {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center space-y-6"
-      >
+      <div className="text-center space-y-6">
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
           My Resume
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           A comprehensive overview of my professional journey, skills, and achievements.
         </p>
-        <motion.a
+        <a
           href="https://drive.google.com/file/d/1fMzc-2nRgIr2Aqlw3ZVnuvgpKZ1TIGJd/view"
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-medium shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 transition-all duration-300"
+          className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl font-medium shadow-lg"
         >
           <Download className="w-5 h-5" />
           <span>Download PDF Resume</span>
-        </motion.a>
-      </motion.div>
+        </a>
+      </div>
 
       {/* Education */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="space-y-6"
-      >
+      <section className="space-y-6">
         <h3 className="text-3xl font-bold flex items-center">
           <GraduationCap className="w-8 h-8 text-accent-500 mr-4" />
           Education
         </h3>
         <div className="grid grid-cols-1 gap-6">
           {educationData.map((education, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="p-8 bg-gradient-to-br from-blue-50/80 to-purple-50/40 dark:from-blue-900/30 dark:to-purple-900/20 backdrop-blur-sm rounded-2xl border border-blue-200/50 dark:border-purple-700/50 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="p-8 bg-blue-50 dark:bg-blue-900/30 rounded-2xl border border-blue-200 dark:border-purple-700 shadow-sm"
             >
               <div className="flex items-start space-x-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -150,32 +129,24 @@ const ResumeSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Experience */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="space-y-6"
-      >
+      <section className="space-y-6">
         <h3 className="text-3xl font-bold flex items-center">
           <Briefcase className="w-8 h-8 text-accent-500 mr-4" />
           Professional Experience
         </h3>
         <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
               className="relative"
             >
-              <div className="p-8 bg-gradient-to-br from-green-50/80 to-emerald-50/40 dark:from-green-900/30 dark:to-emerald-900/20 backdrop-blur-sm rounded-2xl border border-green-200/50 dark:border-emerald-700/50 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="p-8 bg-green-50 dark:bg-green-900/30 rounded-2xl border border-green-200 dark:border-emerald-700 shadow-sm">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-start space-x-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -213,30 +184,22 @@ const ResumeSection = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Skills */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="space-y-6"
-      >
+      <section className="space-y-6">
         <h3 className="text-3xl font-bold flex items-center">
           <Code className="w-8 h-8 text-accent-500 mr-4" />
           Technical Skills
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {Object.entries(skills).map(([category, skillList], categoryIndex) => (
-            <motion.div
+            <div
               key={category}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 + categoryIndex * 0.1 }}
-              className="p-8 bg-gradient-to-br from-indigo-50/80 to-cyan-50/40 dark:from-indigo-900/30 dark:to-cyan-900/20 backdrop-blur-sm rounded-2xl border border-indigo-200/50 dark:border-cyan-700/50 shadow-lg"
+              className="p-8 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl border border-indigo-200 dark:border-cyan-700 shadow-sm"
             >
               <h4 className="text-xl font-bold text-accent-600 dark:text-accent-400 mb-6">{category}</h4>
               <div className="space-y-4">
@@ -247,41 +210,30 @@ const ResumeSection = () => {
                       <span className="text-xs text-gray-500 dark:text-gray-400">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                      <motion.div
+                      <div
                         className="bg-gradient-to-r from-accent-500 to-accent-600 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 1.2 + categoryIndex * 0.1 + skillIndex * 0.1 }}
+                        style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Achievements */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        className="space-y-6"
-      >
+      <section className="space-y-6">
         <h3 className="text-3xl font-bold flex items-center">
           <Award className="w-8 h-8 text-accent-500 mr-4" />
           Achievements & Recognition
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {achievements.map((achievement, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              className="p-6 bg-gradient-to-br from-yellow-50/80 to-orange-50/40 dark:from-yellow-900/30 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl border border-yellow-200/50 dark:border-yellow-700/50 shadow-lg"
+              className="p-6 bg-yellow-50 dark:bg-yellow-900/30 rounded-2xl border border-yellow-200 dark:border-yellow-700 shadow-sm"
             >
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -289,10 +241,10 @@ const ResumeSection = () => {
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 font-medium leading-relaxed">{achievement}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };

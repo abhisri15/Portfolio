@@ -23,17 +23,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
   paper,
 }) => {
   return (
-    <div
-      className="bg-accent-50 dark:bg-accent-900/30 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-accent-200 dark:border-accent-800"
-    >
-      <div className="relative h-48 overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700">
+      <div className="h-48 overflow-hidden">
         <img 
           src={image} 
           alt={title} 
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-20 hover:bg-opacity-10 transition-opacity duration-300"></div>
       </div>
       
       <div className="p-6">

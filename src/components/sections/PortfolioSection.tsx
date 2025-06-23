@@ -1,4 +1,4 @@
-import ProjectCard, { ProjectProps } from '../ui/ProjectCard';
+import ProjectCard from '../ui/ProjectCard';
 import { projectsData } from '../../data/projectsData';
 
 const PortfolioSection = () => {
