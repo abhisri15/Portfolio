@@ -19,6 +19,7 @@ const ResumeSection = () => {
       duration: 'Jan 2025 - Present',
       location: 'Bangalore, India',
       type: 'Current',
+      year: '2025',
       responsibilities: [
         'Developed Python-based automation scripts for data processing and workflow optimization, improving task efficiency by over 30%',
         'Collaborated with cross-functional teams to integrate proprietary systems with external APIs and third-party tools',
@@ -31,6 +32,7 @@ const ResumeSection = () => {
       duration: 'May 2024 - Jul 2024',
       location: 'Bangalore, India',
       type: 'Past',
+      year: '2024',
       responsibilities: [
         'Engineered automated multi-label NLP classification system using Python, Scikit-Learn, and TF-IDF vectorization, achieving 78% accuracy',
         'Constructed text preprocessing pipelines and evaluated model performance across multiple algorithms',
@@ -43,6 +45,7 @@ const ResumeSection = () => {
       duration: 'Dec 2023 - Feb 2024',
       location: 'Remote',
       type: 'Past',
+      year: '2023',
       responsibilities: [
         'Built a robust speech analytics platform using Whisper API and PyAnnote-Audio clustering',
         'Achieved 15% reduction in Word Error Rate (WER) and improved speaker diarization accuracy by 22%',
@@ -50,6 +53,11 @@ const ResumeSection = () => {
       ]
     }
   ];
+
+  const educationWithYear = educationData.map(edu => ({
+    ...edu,
+    year: edu.date.includes('2025') ? '2025' : edu.date.includes('2021') ? '2021' : '2019'
+  }));
 
   const skills = {
     'Programming Languages': [
@@ -109,17 +117,19 @@ const ResumeSection = () => {
           <GraduationCap className="w-8 h-8 text-accent-500 mr-4" />
           Education
         </h3>
-        <div className="grid grid-cols-1 gap-6">
-          {educationData.map((education, index) => (
-            <div
-              key={index}
-              className="p-8 bg-blue-50 dark:bg-blue-900/30 rounded-2xl border border-blue-200 dark:border-purple-700 shadow-sm"
-            >
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="w-8 h-8 text-white" />
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+          
+          <div className="space-y-8">
+            {educationWithYear.map((education, index) => (
+              <div key={index} className="relative pl-20">
+                {/* Timeline dot */}
+                <div className="absolute left-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                  <span className="text-white font-bold text-sm">{education.year}</span>
                 </div>
-                <div className="flex-1">
+                
+                <div className="p-8 bg-blue-50 dark:bg-blue-900/30 rounded-2xl border border-blue-200 dark:border-purple-700 shadow-sm">
                   <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{education.degree}</h4>
                   <p className="text-accent-600 dark:text-accent-400 font-medium mb-2">{education.institution}</p>
                   <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
@@ -129,8 +139,8 @@ const ResumeSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -140,18 +150,20 @@ const ResumeSection = () => {
           <Briefcase className="w-8 h-8 text-accent-500 mr-4" />
           Professional Experience
         </h3>
-        <div className="space-y-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="relative"
-            >
-              <div className="p-8 bg-green-50 dark:bg-green-900/30 rounded-2xl border border-green-200 dark:border-emerald-700 shadow-sm">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-start space-x-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Building className="w-8 h-8 text-white" />
-                    </div>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent-500 to-green-500"></div>
+          
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative pl-20">
+                {/* Timeline dot */}
+                <div className="absolute left-0 w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                  <span className="text-white font-bold text-sm">{exp.year}</span>
+                </div>
+                
+                <div className="p-8 bg-green-50 dark:bg-green-900/30 rounded-2xl border border-green-200 dark:border-emerald-700 shadow-sm">
+                  <div className="flex items-start justify-between mb-6">
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 dark:text-white">{exp.position}</h4>
                       <p className="text-accent-600 dark:text-accent-400 font-medium text-lg">{exp.company}</p>
@@ -166,26 +178,26 @@ const ResumeSection = () => {
                         </span>
                       </div>
                     </div>
+                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${
+                      exp.type === 'Current' 
+                        ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' 
+                        : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400'
+                    }`}>
+                      {exp.type}
+                    </span>
                   </div>
-                  <span className={`px-4 py-2 rounded-full text-sm font-medium ${
-                    exp.type === 'Current' 
-                      ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' 
-                      : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400'
-                  }`}>
-                    {exp.type}
-                  </span>
+                  <ul className="space-y-3">
+                    {exp.responsibilities.map((resp, respIndex) => (
+                      <li key={respIndex} className="flex items-start">
+                        <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                        <span className="text-gray-600 dark:text-gray-300 leading-relaxed">{resp}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-3">
-                  {exp.responsibilities.map((resp, respIndex) => (
-                    <li key={respIndex} className="flex items-start">
-                      <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                      <span className="text-gray-600 dark:text-gray-300 leading-relaxed">{resp}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -211,7 +223,7 @@ const ResumeSection = () => {
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-accent-500 to-accent-600 h-2 rounded-full"
+                        className="bg-gradient-to-r from-accent-500 to-accent-600 h-2 rounded-full transition-all duration-500"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>

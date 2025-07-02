@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { CalendarDays, ExternalLink, Clock } from 'lucide-react';
-import axios from 'axios';
 
 interface BlogPost {
   id: number;
@@ -16,53 +15,44 @@ const BlogSection = () => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/blog');
-        setPosts(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-        // Fallback data
-        setPosts([
-          {
-            id: 1,
-            title: "Gradient Checkpointing in Deep Learning",
-            summary: "A comprehensive guide to implementing gradient checkpointing for memory-efficient training of deep neural networks.",
-            date: "2024-03-15",
-            url: "https://iq.opengenus.org/gradient-checkpointing/",
-            image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
-          },
-          {
-            id: 2,
-            title: "Multi-Head Attention in Deep Learning",
-            summary: "Detailed exploration of multi-head attention mechanisms and their implementation in deep learning models.",
-            date: "2024-02-20",
-            url: "https://iq.opengenus.org/multi-head-attention-in-deep-learning/",
-            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
-          },
-          {
-            id: 3,
-            title: "Multi-Label Classification Guide",
-            summary: "Complete guide to implementing multi-label classification with practical examples and best practices.",
-            date: "2024-01-25",
-            url: "https://iq.opengenus.org/multi-label-classification/",
-            image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg"
-          },
-          {
-            id: 4,
-            title: "Understanding Backpropagation Algorithm",
-            summary: "In-depth explanation of the backpropagation algorithm with step-by-step implementation details.",
-            date: "2024-01-10",
-            url: "https://iq.opengenus.org/backpropagation-algorithm/",
-            image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg"
-          }
-        ]);
-        setLoading(false);
+    // Use static data for faster loading
+    const staticPosts = [
+      {
+        id: 1,
+        title: "Gradient Checkpointing in Deep Learning",
+        summary: "A comprehensive guide to implementing gradient checkpointing for memory-efficient training of deep neural networks.",
+        date: "2024-03-15",
+        url: "https://iq.opengenus.org/gradient-checkpointing/",
+        image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+      },
+      {
+        id: 2,
+        title: "Multi-Head Attention in Deep Learning",
+        summary: "Detailed exploration of multi-head attention mechanisms and their implementation in deep learning models.",
+        date: "2024-02-20",
+        url: "https://iq.opengenus.org/multi-head-attention-in-deep-learning/",
+        image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+      },
+      {
+        id: 3,
+        title: "Multi-Label Classification Guide",
+        summary: "Complete guide to implementing multi-label classification with practical examples and best practices.",
+        date: "2024-01-25",
+        url: "https://iq.opengenus.org/multi-label-classification/",
+        image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg"
+      },
+      {
+        id: 4,
+        title: "Understanding Backpropagation Algorithm",
+        summary: "In-depth explanation of the backpropagation algorithm with step-by-step implementation details.",
+        date: "2024-01-10",
+        url: "https://iq.opengenus.org/backpropagation-algorithm/",
+        image: "https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg"
       }
-    };
+    ];
     
-    fetchPosts();
+    setPosts(staticPosts);
+    setLoading(false);
   }, []);
   
   const formatDate = (dateString: string) => {
@@ -112,6 +102,7 @@ const BlogSection = () => {
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
 
@@ -137,7 +128,7 @@ const BlogSection = () => {
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                     {post.summary}
                   </p>
 

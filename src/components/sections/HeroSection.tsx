@@ -87,7 +87,7 @@ const HeroSection = () => {
             href="https://github.com/abhisri15"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-300"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
           >
             <Github className="w-5 h-5" />
           </a>
@@ -95,13 +95,13 @@ const HeroSection = () => {
             href="https://www.linkedin.com/in/abhikalp-srivastava-00ab4122a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-300"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
             href="mailto:abhikalp15092003@gmail.com"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-300"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
           >
             <Mail className="w-5 h-5" />
           </a>
@@ -109,7 +109,7 @@ const HeroSection = () => {
             href="https://leetcode.com/u/abhikalpsri/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-300"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
           >
             <LeetCodeIcon />
           </a>
@@ -117,7 +117,7 @@ const HeroSection = () => {
             href="https://www.kaggle.com/abhikalpsrivastava15"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-300"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
           >
             <KaggleIcon />
           </a>
@@ -135,7 +135,8 @@ const HeroSection = () => {
                 <img
                   src={theme === 'dark' ? "/1.jpeg" : "/2.jpeg"}
                   alt="Abhikalp Srivastava"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-none"
+                  loading="eager"
                 />
               </div>
             </div>

@@ -1,4 +1,5 @@
-import ProjectCard from '../ui/ProjectCard';
+import React from 'react';
+import { ExternalLink, Github } from 'lucide-react';
 import { projectsData } from '../../data/projectsData';
 
 const PortfolioSection = () => {
@@ -17,7 +18,82 @@ const PortfolioSection = () => {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <div key={project.title} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
+              
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.technologies.slice(0, 4).map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 4 && (
+                  <span className="text-xs px-2 py-1 bg-accent-100 dark:bg-accent-900/30 rounded-full text-accent-700 dark:text-accent-300">
+                    +{project.technologies.length - 4} more
+                  </span>
+                )}
+              </div>
+              
+              <div className="flex space-x-3">
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-500 transition-colors duration-200"
+                    aria-label="View source code on GitHub"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                )}
+                {project.demo && (
+                  <a 
+                    href={project.demo} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-gray-600 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-500 transition-colors duration-200"
+                    aria-label="View live demo"
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                )}
+                {project.video && (
+                  <a 
+                    href={project.video} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-accent-500 hover:text-accent-600 transition-colors duration-200"
+                  >
+                    Demo
+                  </a>
+                )}
+                {project.paper && (
+                  <a 
+                    href={project.paper} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-sm text-accent-500 hover:text-accent-600 transition-colors duration-200"
+                  >
+                    Paper
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>

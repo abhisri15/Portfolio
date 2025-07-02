@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Send, 
   Mail, 
@@ -152,7 +151,7 @@ const ContactSection = () => {
             {contactInfo.map((contact, index) => {
               const Icon = contact.icon;
               const content = (
-                <div className="p-6 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="p-6 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-800/40 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-200">
                   <div className="flex items-center space-x-4">
                     <div className={`w-12 h-12 bg-gradient-to-br ${contact.color} rounded-xl flex items-center justify-center`}>
                       <Icon className="w-6 h-6 text-white" />
@@ -189,7 +188,7 @@ const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-4 bg-gradient-to-br ${social.color} text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300`}
+                    className={`p-4 bg-gradient-to-br ${social.color} text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-200`}
                   >
                     <Icon className="w-6 h-6" />
                   </a>
@@ -204,7 +203,7 @@ const ContactSection = () => {
               <span className="font-semibold text-green-700 dark:text-green-300">Available for opportunities</span>
             </div>
             <p className="text-green-600 dark:text-green-400 text-sm mt-2">
-              Currently open to internships, freelance projects, and collaboration opportunities.
+              Currently open to full-time, freelance projects, and collaboration opportunities.
             </p>
           </div>
         </div>
@@ -228,7 +227,7 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200"
                 placeholder="Your full name"
               />
             </div>
@@ -245,7 +244,7 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -262,7 +261,7 @@ const ContactSection = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200"
                 placeholder="What's this about?"
               />
             </div>
@@ -279,7 +278,7 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 resize-none"
                 placeholder="Tell me about your project or question..."
               ></textarea>
             </div>
@@ -287,7 +286,7 @@ const ContactSection = () => {
             <button 
               type="submit" 
               disabled={status.submitting}
-              className="w-full px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-medium rounded-xl shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-2"
+              className="w-full px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-medium rounded-xl shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2"
             >
               {status.submitting ? (
                 <>

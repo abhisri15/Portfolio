@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { 
   Home, 
   User, 
@@ -80,15 +79,13 @@ const HomePage = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="relative p-3 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-colors duration-300"
+                className="relative p-3 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-colors duration-200"
               >
-                <AnimatePresence mode="wait">
-                  {theme === 'dark' ? (
-                    <Sun key="sun" className="w-5 h-5 text-accent-600" />
-                  ) : (
-                    <Moon key="moon" className="w-5 h-5 text-accent-600" />
-                  )}
-                </AnimatePresence>
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-accent-600" />
+                ) : (
+                  <Moon className="w-5 h-5 text-accent-600" />
+                )}
               </button>
             </div>
 
@@ -101,7 +98,7 @@ const HomePage = () => {
                     <button
                       key={item.id}
                       onClick={() => setActiveSection(item.id)}
-                      className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium transition-colors duration-300 ${
+                      className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium transition-colors duration-200 ${
                         activeSection === item.id
                           ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg'
                           : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -118,14 +115,9 @@ const HomePage = () => {
 
           {/* Content Area */}
           <main className="relative min-h-[600px]">
-            <AnimatePresence mode="wait">
-              <div
-                key={activeSection}
-                className="p-6 md:p-8"
-              >
-                {renderSection()}
-              </div>
-            </AnimatePresence>
+            <div className="p-6 md:p-8">
+              {renderSection()}
+            </div>
           </main>
         </div>
       </div>
