@@ -6,8 +6,7 @@ import {
   Code,
   Brain,
   Database,
-  Cloud,
-  Sparkles
+  Cloud
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -49,16 +48,16 @@ const HeroSection = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[500px]">
       {/* Left Content */}
-      <div className="space-y-8">
-        <div className="space-y-4">
+      <div className="space-y-6">
+        <div className="space-y-3">
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Available for opportunities</span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent">
               Hello, I'm
             </span>
@@ -82,12 +81,12 @@ const HeroSection = () => {
         </div>
 
         {/* Social Links - All 5 icons in a row */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-3">
           <a
             href="https://github.com/abhisri15"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-150"
           >
             <Github className="w-5 h-5" />
           </a>
@@ -95,13 +94,13 @@ const HeroSection = () => {
             href="https://www.linkedin.com/in/abhikalp-srivastava-00ab4122a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-150"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
             href="mailto:abhikalp15092003@gmail.com"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-150"
           >
             <Mail className="w-5 h-5" />
           </a>
@@ -109,7 +108,7 @@ const HeroSection = () => {
             href="https://leetcode.com/u/abhikalpsri/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-150"
           >
             <LeetCodeIcon />
           </a>
@@ -117,7 +116,7 @@ const HeroSection = () => {
             href="https://www.kaggle.com/abhikalpsrivastava15"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-200"
+            className="p-3 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-accent-500 hover:text-white transition-colors duration-150"
           >
             <KaggleIcon />
           </a>
@@ -128,25 +127,25 @@ const HeroSection = () => {
       <div className="relative">
         <div className="relative">
           {/* Profile Image */}
-          <div className="relative mx-auto w-80 h-80 mb-8">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
-            <div className="relative w-full h-full bg-gradient-to-br from-accent-500 to-accent-600 rounded-3xl p-1 shadow-2xl">
+          <div className="relative mx-auto w-80 h-80 mb-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent-500/20 to-purple-500/20 rounded-3xl blur-xl"></div>
+            <div className="relative w-full h-full bg-gradient-to-br from-accent-500 to-accent-600 rounded-3xl p-1 shadow-xl">
               <div className="w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-gray-800">
                 <img
                   src={theme === 'dark' ? "/1.jpeg" : "/2.jpeg"}
                   alt="Abhikalp Srivastava"
-                  className="w-full h-full object-cover transition-none"
+                  className="w-full h-full object-cover"
                   loading="eager"
                 />
               </div>
             </div>
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full"></div>
+            <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
           </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3">
             {skills.map((skill, index) => {
               const Icon = skill.icon;
               return (
@@ -154,11 +153,11 @@ const HeroSection = () => {
                   key={skill.label}
                   className="relative"
                 >
-                  <div className="p-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50">
-                    <div className={`w-10 h-10 bg-gradient-to-br ${skill.color} rounded-xl flex items-center justify-center mb-3`}>
-                      <Icon className="w-5 h-5 text-white" />
+                  <div className="p-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50">
+                    <div className={`w-8 h-8 bg-gradient-to-br ${skill.color} rounded-lg flex items-center justify-center mb-2`}>
+                      <Icon className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="font-semibold text-sm text-gray-800 dark:text-gray-200 leading-tight">
+                    <h3 className="font-semibold text-xs text-gray-800 dark:text-gray-200 leading-tight">
                       {skill.label}
                     </h3>
                   </div>
