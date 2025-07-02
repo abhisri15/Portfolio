@@ -8,7 +8,7 @@ export const projectsData: ProjectProps[] = [
     image: 'https://images.pexels.com/photos/2049422/pexels-photo-2049422.jpeg',
     technologies: ['Python', 'TensorFlow', 'Flask', 'React', 'Scikit-learn', 'CNN', 'Machine Learning', 'Data Science'],
     github: 'https://github.com/abhisri15/CropStop',
-    demo: 'https://example.com',
+    // Removed demo link
     video: 'https://drive.google.com/file/d/1Q3CF1kXaNLk1Q0Il5qsizlCl-fk7CLFW/view'
   },
   {
@@ -17,7 +17,7 @@ export const projectsData: ProjectProps[] = [
     image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg',
     technologies: ['Python', 'PyTorch', 'Deep Q-Learning', 'Neural Networks'],
     github: 'https://github.com/abhisri15/AI-Self-Driving-Car',
-    demo: 'https://example.com'
+    // Removed demo link
   },
   {
     title: 'Secure Apple Leaf Disease Detection',
